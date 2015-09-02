@@ -61,7 +61,7 @@ namespace Test
 
         public override void Draw(Graphics graphics)
         {
-            foreach(var c in Children)
+            foreach(var c in Children)//asd
             {
                 if (c != null)
                 {
