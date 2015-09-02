@@ -12,7 +12,15 @@ namespace Test
 
         static void Main(string[] args)
         {
-            Grid grid = new Grid(20, 20, 1000, 1000, new GridOptions { Columns = 5, Rows = 5, PaddingX = 10, PaddingY = 10 });
+            GridOptions options = new GridOptions()
+            {
+                Columns = 5,
+                Rows = 6,
+                PaddingX = 10,
+                PaddingY = 25
+            };
+
+            Grid grid = new Grid(20, 20, 1000, 1000, options);
             grid.Add(new SimpleFrame());
             grid.Add(new SimpleFrame());
             grid.Add(new SimpleFrame());
@@ -35,9 +43,9 @@ namespace Test
 
             Page p = new Page(1500, 1500, savingPath);
             p.Elements.Add(grid);
+            p.Elements.Last().Move(100, 100);
             p.Create();
-
-            Console.ReadKey();
+            Console.WriteLine("finished...");
         }
     }
 }

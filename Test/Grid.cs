@@ -45,9 +45,9 @@ namespace Test
             int pX = options.PaddingX;
             int pY = options.PaddingY;
 
-            for (int v = 0; v < options.Rows; v++)
+            for (int v = 0; v < options.Columns; v++)
             {
-                for (int u = 0; u < options.Columns; u++)
+                for (int u = 0; u < options.Rows; u++)
                 {
                     Rectangle cell = new Rectangle(pX, pY, cellWidth, cellHeight);
                     cells.Add(cell);
@@ -61,7 +61,6 @@ namespace Test
 
         public override void Draw(Graphics graphics)
         {
-            graphics.DrawRectangle(new Pen(Color.Black, 2.0f), Region);
             foreach(var c in Children)
             {
                 if (c != null)
